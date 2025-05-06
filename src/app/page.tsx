@@ -118,7 +118,7 @@ const Home = () => {
             <div className="flex flex-row items-center justify-start gap-2 w-full">
               <input 
                 type="date"
-                className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none"
+                className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none h-12"
                 onChange={(e) => {
                   setStartDate(e.target.value);
                 }}
@@ -129,7 +129,7 @@ const Home = () => {
             <div className="flex flex-row items-center justify-start gap-2 w-full">
               <input 
                 type="date"
-                className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none"
+                className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none h-12"
                 onChange={(e) => {
                   setEndDate(e.target.value);
                 }}
@@ -149,7 +149,7 @@ const Home = () => {
           <input 
             type="text" 
             placeholder="검색어를 입력하세요"
-            className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none"
+            className="w-full border border-key/10 rounded-2xl px-4 py-3 outline-none h-12"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
