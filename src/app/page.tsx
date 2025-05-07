@@ -2,12 +2,17 @@
 
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
+import "dayjs/locale/ko";
+import localeData from "dayjs/plugin/localeData";
 import React from "react";
 
 import instance from "@/utils/instance";
 import { Calendar, University } from "@/utils/response";
 
 import Guest from "./guest";
+
+dayjs.extend(localeData);
+dayjs.locale("ko");
 
 const Home = () => {
   const [current, setCurrent] = React.useState<string[]>([]);
@@ -176,7 +181,7 @@ const Home = () => {
                       <p className="font-medium whitespace-nowrap">{event.title}</p>
                     </div>
                   </a>
-                  <p className="font-medium !text-key/50 whitespace-nowrap">{dayjs(event.date).format("MM월 DD일")}</p>
+                  <p className="font-medium !text-key/50 whitespace-nowrap">{dayjs(event.date).format("MM/DD dd")}</p>
                 </div>
                 {
                   event.guests.length ? (
