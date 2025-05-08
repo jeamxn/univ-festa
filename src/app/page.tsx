@@ -80,35 +80,33 @@ const Home = () => {
             </svg>
             <p className="!text-key/50 font-medium">대학 필터링 (가나다순)</p>
           </div>
-          <div className="w-full py-2 -my-2">
-            <div className="overflow-x-auto scrollbar-hide px-4">
-              <div className="flex flex-row flex-warp items-start justify-start gap-2 overflow-x-auto w-max">
-                {
-                  isUnivLoading ? 
-                    Array(10).fill(0).map((_, index) => (
-                      <div key={index} className="loading-background flex flex-row items-center justify-center rounded-2xl py-2 px-4 gap-1 border border-key/10 cursor-pointer h-[42px] w-36" />
-                    )):
-                    universities.map((univ) => (
-                      <button 
-                        key={univ.id} 
-                        className={[
-                          "flex flex-row items-center justify-center rounded-2xl py-2 px-4 gap-1 border border-key/10 cursor-pointer",
-                          current.includes(univ.id) ? "bg-key/10" : "",
-                        ].join(" ")}
-                        onClick={() => {
-                          if (current.includes(univ.id)) {
-                            setCurrent((prev) => prev.filter((id) => id !== univ.id));
-                          } else {
-                            setCurrent((prev) => [...prev, univ.id]);
-                          }
-                        }}
-                      >
-                        <img src={univ.icon} alt={univ.name} className="w-5 h-5" />
-                        <p className="font-medium">{univ.name}</p>
-                      </button>
-                    ))
-                }
-              </div>
+          <div className="w-full py-2 px-4 -my-2">
+            <div className="flex flex-row flex-wrap items-start justify-start gap-2 w-full">
+              {
+                isUnivLoading ? 
+                  Array(10).fill(0).map((_, index) => (
+                    <div key={index} className="loading-background flex flex-row items-center justify-center rounded-2xl py-2 px-4 gap-1 border border-key/10 cursor-pointer h-[42px] w-36" />
+                  )):
+                  universities.map((univ) => (
+                    <button 
+                      key={univ.id} 
+                      className={[
+                        "flex flex-row items-center justify-center rounded-2xl py-2 px-4 gap-1 border border-key/10 cursor-pointer",
+                        current.includes(univ.id) ? "bg-key/10" : "",
+                      ].join(" ")}
+                      onClick={() => {
+                        if (current.includes(univ.id)) {
+                          setCurrent((prev) => prev.filter((id) => id !== univ.id));
+                        } else {
+                          setCurrent((prev) => [...prev, univ.id]);
+                        }
+                      }}
+                    >
+                      <img src={univ.icon} alt={univ.name} className="w-5 h-5" />
+                      <p className="font-medium whitespace-nowrap">{univ.name}</p>
+                    </button>
+                  ))
+              }
             </div>
           </div>
         </div>
