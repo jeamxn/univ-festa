@@ -203,6 +203,7 @@ const Home = () => {
         }
       </div>
       <div className="w-full flex flex-col items-start justify-start gap-1 px-4 py-4">
+        <p className="!text-key/45 text-sm">주요 대학 기준은 제 친구들이 다니는 학교 기준입니다..,.하하</p>
         <p className="!text-key/45 text-sm">하나하나 손으로 입력하는거라 오류가 있을 수 있어요!</p>
         <p className="!text-key/45 text-sm">잘못된 정보 또는 문제가 될 수 있는 정보가 있다면 <a href="https://open.kakao.com/me/Jeamxn" className="underline !text-key/45 text-sm" target="_blank" rel="noreferrer">여기</a>로 연락해주세요!</p>
         <p className="!text-key/45 text-sm">이 프로젝트는 오픈소스입니다! 여러분들도 <a href="https://github.com/jeamxn/univ-festa" className="underline !text-key/45 text-sm" target="_blank" rel="noreferrer">여기</a>에서 기여할 수 있어요!</p>
